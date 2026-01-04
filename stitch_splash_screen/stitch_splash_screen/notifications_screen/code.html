@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications Screen</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#7f13ec",
+                "background-light": "#f7f6f8",
+                "background-dark": "#0f0f12", // Slightly darker than config for that premium OLED look
+                "card-dark": "#191022",
+                "accent-cyan": "#22d3ee",
+                },
+                fontFamily: {
+                "display": ["Inter", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+            },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-hidden">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto border-x border-white/5 shadow-2xl">
+<!-- Header -->
+<header class="flex flex-col bg-background-light dark:bg-background-dark pt-6 pb-2 px-6 z-10 sticky top-0">
+<div class="flex items-center justify-between h-14">
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Notifications</h1>
+<button class="text-accent-cyan text-sm font-semibold hover:text-cyan-300 transition-colors">
+                    Mark all read
+                </button>
+</div>
+<!-- Filter Tabs -->
+<div class="flex gap-3 overflow-x-auto no-scrollbar py-2 mt-2">
+<!-- Active Tab -->
+<button class="flex shrink-0 items-center justify-center rounded-full bg-primary px-5 py-2 transition-transform active:scale-95">
+<span class="text-white text-sm font-semibold">All</span>
+</button>
+<!-- Inactive Tabs -->
+<button class="flex shrink-0 items-center justify-center rounded-full border border-slate-200 dark:border-white/10 bg-transparent px-5 py-2 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors active:scale-95">
+<span class="text-slate-600 dark:text-slate-400 text-sm font-medium">Messages</span>
+</button>
+<button class="flex shrink-0 items-center justify-center rounded-full border border-slate-200 dark:border-white/10 bg-transparent px-5 py-2 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors active:scale-95">
+<span class="text-slate-600 dark:text-slate-400 text-sm font-medium">Contacts</span>
+</button>
+<button class="flex shrink-0 items-center justify-center rounded-full border border-slate-200 dark:border-white/10 bg-transparent px-5 py-2 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors active:scale-95">
+<span class="text-slate-600 dark:text-slate-400 text-sm font-medium">System</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area: Scrollable List -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-24">
+<!-- List Item 1: Unread Message -->
+<div class="group relative flex items-center gap-4 px-6 py-4 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-primary bg-primary/5">
+<!-- Avatar -->
+<div class="relative shrink-0">
+<img alt="Portrait of Sarah Williams" class="h-14 w-14 rounded-full object-cover border-2 border-background-light dark:border-[#251e30]" data-alt="Portrait of Sarah Williams" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQfldvkGEawiJlVFSk1OLOTGyh4tU9hv4lSPl1IMvCYyMqd3cdD-5n2LHooTVa7MXKUSRdl6HkFGC82c9WFo2jhsr-lHIcYxqQD4YdbmlBZd57ZSVbPrKvfUu_Y9EfLrsgw3qIQ92luQFTVQJtF_a5HjOjbmSGIrHDegcfK1L1C53trf2ZItD84r52VIbtgQlrBkdYT2rs9AW0y6IXKRozhHivIA7ijEqU9-l4Yq6L8Jx2VEsFIuwah0_Rc0IvldsLPpJ4jzMhBg"/>
+<div class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full bg-green-500 border-2 border-background-light dark:border-[#251e30]"></div>
+</div>
+<!-- Content -->
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-slate-900 dark:text-white text-base font-bold truncate">Sarah Williams</p>
+<span class="text-primary text-xs font-semibold whitespace-nowrap ml-2">2m ago</span>
+</div>
+<div class="flex items-center gap-2">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium truncate">Sent you a message</p>
+<span class="h-2 w-2 rounded-full bg-primary shrink-0 animate-pulse"></span>
+</div>
+</div>
+</div>
+<!-- List Item 2: Contact Request -->
+<div class="group relative flex items-center gap-4 px-6 py-4 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-transparent">
+<!-- Avatar -->
+<div class="relative shrink-0">
+<img alt="Portrait of Alex Chen" class="h-14 w-14 rounded-full object-cover border border-slate-200 dark:border-white/10" data-alt="Portrait of Alex Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR_o2_mjv827JZIwsp1PcCd31M-27HzGDU_qm8AhN7_W2Xnz26iFR8qTShKfPXn7DFp42zkae3ilx3ToZ0OGER4QcA32Vlo9QDyJc3H2h7TKwKX7XbyEkP-6oKJRoWv0aMRvgkicY9b02NelSqzbT_4vEBiyYKVGOVBFnHn9DwH4CWYjVfOjVn6DsyHBVGk7XK3l5WtJHAbaY73ZjdQdot74AmoMfhgLshOXFpFsjlDlEl9_M5GDbFG2PGb8wupgzIfSi4MSPyew"/>
+</div>
+<!-- Content -->
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-slate-900 dark:text-white text-base font-bold truncate">Alex Chen</p>
+<span class="text-slate-400 dark:text-slate-500 text-xs font-medium whitespace-nowrap ml-2">1h ago</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm truncate">Accepted your contact request</p>
+</div>
+</div>
+<!-- List Item 3: System Notification -->
+<div class="group relative flex items-center gap-4 px-6 py-4 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-transparent">
+<!-- Icon Avatar -->
+<div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">notifications</span>
+</div>
+<!-- Content -->
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-slate-900 dark:text-white text-base font-bold truncate">NexusChat</p>
+<span class="text-slate-400 dark:text-slate-500 text-xs font-medium whitespace-nowrap ml-2">Yesterday</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm truncate">Welcome! Complete your profile</p>
+</div>
+</div>
+<!-- List Item 4: Mention -->
+<div class="group relative flex items-center gap-4 px-6 py-4 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors cursor-pointer border-l-4 border-transparent">
+<!-- Avatar -->
+<div class="relative shrink-0">
+<img alt="Portrait of John Doe" class="h-14 w-14 rounded-full object-cover border border-slate-200 dark:border-white/10" data-alt="Portrait of John Doe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZoUjQLWNr2U8N09LEuAxdKTNiKD8UsLm0JazRyiToWw0KG_GGwdOIS_42797OJ8Nxd_yc3_g6POWC__DGQiy8593Wu2WyYFqjtfnxbwZ16sjy0KNk76sAE_aEVrjKJDK75D6EiiHLFjcOFZaXyKyjHJRXkm2Xr5x7GPrY1kdSwvFgjUS2ZMvhjD4XYHlgyNjmJhTrCP7wEsdDndOt7WEpcmQd3OYFBAn40X7eYGExKTvWAxtWJ-KjFHsnoB7tyC3wnOqWz18weA"/>
+<div class="absolute -top-1 -right-1 h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center border-2 border-background-light dark:border-[#0f0f12]">
+<span class="text-white text-[10px] font-bold">@</span>
+</div>
+</div>
+<!-- Content -->
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<p class="text-slate-900 dark:text-white text-base font-bold truncate">John Doe</p>
+<span class="text-slate-400 dark:text-slate-500 text-xs font-medium whitespace-nowrap ml-2">2d ago</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm truncate">Mentioned you in a chat</p>
+</div>
+</div>
+<!-- Visual Separator for demo purposes -->
+<div class="w-full flex justify-center py-8">
+<div class="h-px w-32 bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
+</div>
+<!-- Empty State (Shown at bottom for design demonstration) -->
+<div class="flex flex-col items-center justify-center py-10 px-4 text-center opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+<div class="relative mb-6">
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600" style="font-size: 64px;">notifications_none</span>
+<div class="absolute -bottom-1 -right-1 flex items-center justify-center bg-primary h-8 w-8 rounded-full border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined text-white" style="font-size: 16px;">check</span>
+</div>
+</div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold mb-2">You're all caught up!</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">No new notifications to display</p>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="absolute bottom-0 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-lg border-t border-slate-200 dark:border-white/5 pb-6 pt-3 px-6 z-20">
+<ul class="flex justify-between items-center">
+<!-- Inactive Item -->
+<li class="flex flex-1 flex-col items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300 transition-colors">chat_bubble</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300">Chats</span>
+</li>
+<!-- Inactive Item -->
+<li class="flex flex-1 flex-col items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300 transition-colors">groups</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300">Contacts</span>
+</li>
+<!-- Active Item -->
+<li class="flex flex-1 flex-col items-center gap-1 cursor-pointer relative">
+<!-- Glow effect for active tab -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-primary/20 blur-xl rounded-full"></div>
+<span class="material-symbols-filled text-primary drop-shadow-sm">notifications</span>
+<span class="text-[10px] font-bold text-primary">Alerts</span>
+</li>
+<!-- Inactive Item -->
+<li class="flex flex-1 flex-col items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300 transition-colors">call</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300">Calls</span>
+</li>
+</ul>
+</nav>
+</div>
+</body></html>

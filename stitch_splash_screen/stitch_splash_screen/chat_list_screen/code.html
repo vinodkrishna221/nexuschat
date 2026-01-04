@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NexusChat - Chat List</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8655f6",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#0A0A0F",
+                        "surface-dark": "#1A1A24",
+                        "border-dark": "#252532",
+                        "accent-orange": "#F97316",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "brand": ["Outfit", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-effect {
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-nav {
+            background: rgba(18, 18, 26, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white font-display overflow-hidden h-screen flex flex-col">
+<!-- Status Bar Area (Visual only) -->
+<div class="h-11 w-full bg-background-dark shrink-0 flex items-center justify-between px-6">
+<span class="text-xs font-semibold">9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">wifi</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">battery_full</span>
+</div>
+</div>
+<!-- Sticky Header -->
+<header class="glass-effect sticky top-0 z-30 flex items-center justify-between px-4 h-[60px] border-b border-border-dark">
+<h1 class="font-brand text-[22px] font-semibold tracking-wide text-white">NexusChat</h1>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center text-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+<button class="flex items-center justify-center text-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<main class="flex-1 overflow-y-auto no-scrollbar relative pb-24">
+<!-- Search Bar -->
+<div class="px-4 py-4 sticky top-0 z-20 bg-background-dark/95 backdrop-blur-sm">
+<div class="relative h-11 w-full">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[#a59cba] text-[20px]">search</span>
+</div>
+<input class="block w-full h-full pl-10 pr-3 py-2 border-none rounded-full leading-5 bg-surface-dark text-white placeholder-[#a59cba] focus:outline-none focus:ring-1 focus:ring-primary sm:text-sm" placeholder="Search conversations..." type="text"/>
+</div>
+</div>
+<!-- Chat List -->
+<div class="flex flex-col">
+<!-- Item 1: Sarah Williams (Unread, Online) -->
+<div class="flex items-center px-4 h-[76px] hover:bg-surface-dark/30 active:bg-surface-dark/50 transition-colors cursor-pointer group">
+<div class="relative shrink-0 mr-4">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" data-alt="Portrait of Sarah Williams smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTiXCIPZfE9PJ038x6mIUfVpiF22-MMAzbBu1j7rvG0y-MnAQvc7JNmW1TTwEw8x6uUWzy93RcthyTE8gbsPsON3QAkPm0clgORw1LhDCCIXIGIF4YduYMKIaqTdgGIMYpxQbWGH-aY9d73hI_bBfPCacIMDhn7obUOtPBUXqLO4GdjHYGus8WKTLIb0Jnj-AJ5zdXvaWjf6j2t8MhXBbza4ph_dpN4WU2N38i8f7wTcthAnHbndNY0sFfzpPxMNtoZbvLdZa0jw');"></div>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[#0bda6f] border-2 border-background-dark rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0 pr-2 border-b border-border-dark/50 h-full flex flex-col justify-center group-last:border-none">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-[16px] font-semibold text-white truncate">Sarah Williams</h3>
+<span class="text-[12px] text-accent-orange font-medium">2:34 PM</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-[14px] text-white font-medium truncate pr-4">Hey, are we still on for the meeting tomorrow?</p>
+<span class="flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-accent-orange text-white text-[11px] font-bold">2</span>
+</div>
+</div>
+</div>
+<!-- Item 2: John Doe (Typing, Active Gradient) -->
+<div class="flex items-center px-4 h-[76px] hover:bg-surface-dark/30 active:bg-surface-dark/50 transition-colors cursor-pointer group">
+<div class="relative shrink-0 mr-4 p-[2px] rounded-full bg-gradient-to-tr from-primary to-[#c084fc]">
+<div class="w-[44px] h-[44px] rounded-full bg-cover bg-center border-2 border-background-dark" data-alt="Portrait of John Doe looking serious" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAv9jQaFibjFkyWemixV-snIjcA67SYV5tBvJ6ZgMEk6mislVQrzVaeVSlgEYU4tAgEBP3fM9bsPtZMg_106PaZXjjyMj34TIZ4RwEs2_vKphqRQXnnEflTk3kMpZ2af0Hx0MXHVk0woiTNH82MtUMLQ2JGGkN36KwBiPt2jhhnpHerDaEojmsngu2bKKyrMCnK3lq93YXiLu5Ku4o7BiLmpeCsRsceC72UyfM1k_Afpm2Q_Qi-XBAF8vm10B2R1dHa2tSnki9PNQ');"></div>
+</div>
+<div class="flex-1 min-w-0 pr-2 border-b border-border-dark/50 h-full flex flex-col justify-center">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-[16px] font-semibold text-white truncate">John Doe</h3>
+<span class="text-[12px] text-[#a59cba]">Now</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-[14px] text-primary font-medium italic animate-pulse">typing...</p>
+</div>
+</div>
+</div>
+<!-- Item 3: Marketing Team (Photo Message) -->
+<div class="flex items-center px-4 h-[76px] hover:bg-surface-dark/30 active:bg-surface-dark/50 transition-colors cursor-pointer group">
+<div class="relative shrink-0 mr-4">
+<div class="w-12 h-12 rounded-full bg-surface-dark flex items-center justify-center text-white font-bold text-sm bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+                        MT
+                    </div>
+</div>
+<div class="flex-1 min-w-0 pr-2 border-b border-border-dark/50 h-full flex flex-col justify-center">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-[16px] font-semibold text-white truncate">Marketing Team</h3>
+<span class="text-[12px] text-[#a59cba]">10:45 AM</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center text-[#a59cba] text-[14px]">
+<span class="material-symbols-outlined text-[16px] mr-1" style="font-variation-settings: 'FILL' 1;">image</span>
+<span class="truncate">Photo</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4: Alice Smith (Sent/Read by User) -->
+<div class="flex items-center px-4 h-[76px] hover:bg-surface-dark/30 active:bg-surface-dark/50 transition-colors cursor-pointer group">
+<div class="relative shrink-0 mr-4">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" data-alt="Portrait of Alice Smith" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_azSJ66RTLkFtEka79EwwjTC0Je4an9L9kKafYv7uzg_9qCLq0twGJtP7JxZieLTcPOFpRx3TvAe7eobbfRdutRNsHDg8EErzvbDwpREK0AgEUoKcXKE1AGwzNzAPodOcfdvXDFm2XLnqk37ui0w_BU77QvlVo5W9ChIEM9gj_O9-r_q4kqASwiEhvmic3HfdsNU8otfmM6E03JRqueqs21YN2ybY-9_W6361HG6p4m-NeHUGWLcH0-ZlqT58_YadqeESkqirQg');"></div>
+</div>
+<div class="flex-1 min-w-0 pr-2 border-b border-border-dark/50 h-full flex flex-col justify-center">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-[16px] font-semibold text-white truncate">Alice Smith</h3>
+<span class="text-[12px] text-[#a59cba]">Yesterday</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center text-[#a59cba] text-[14px] max-w-full">
+<span class="material-symbols-outlined text-[16px] text-primary mr-1" style="font-variation-settings: 'FILL' 0, 'wght' 700;">done_all</span>
+<span class="truncate">Sounds good! I'll send over the files.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 5: Mom (Offline) -->
+<div class="flex items-center px-4 h-[76px] hover:bg-surface-dark/30 active:bg-surface-dark/50 transition-colors cursor-pointer group">
+<div class="relative shrink-0 mr-4">
+<div class="w-12 h-12 rounded-full bg-cover bg-center grayscale-[50%]" data-alt="Portrait of an older woman" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTJrZ9z3fN9cz2-9ObYbHf86EsATvpI3U-97IEi3j7JTMGEsT8_G1wf-CNqZ_5wEqHsZMH0_HOiETgWeGWk94_HP3JUrr9ETlIkjNYDqSXb1h6KqYAKbEqb4_5nG5TaoWWgkzA03pX1sNQ7AV-ezDh4RiGeylJdmo0wZ9KXAh9ELVKXizL_7Im16hhhWOWuuLzAAXGCkFDe7j2lenUlyODhfjlxgXuZsDr0-BA5s6vPwQuqsFWoVv_CDE2diT90lSd-coO7923eg');"></div>
+</div>
+<div class="flex-1 min-w-0 pr-2 border-b border-border-dark/50 h-full flex flex-col justify-center">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-[16px] font-semibold text-white truncate">Mom</h3>
+<span class="text-[12px] text-[#a59cba]">Tuesday</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-[14px] text-[#a59cba] truncate">Call me when you can.</p>
+</div>
+</div>
+</div>
+<!-- Item 6: Design Group -->
+<div class="flex items-center px-4 h-[76px] hover:bg-surface-dark/30 active:bg-surface-dark/50 transition-colors cursor-pointer group">
+<div class="relative shrink-0 mr-4">
+<div class="w-12 h-12 rounded-full bg-surface-dark border border-border-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[#a59cba]">group</span>
+</div>
+</div>
+<div class="flex-1 min-w-0 pr-2 border-b border-border-dark/50 h-full flex flex-col justify-center">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-[16px] font-semibold text-white truncate">Design Sprint</h3>
+<span class="text-[12px] text-[#a59cba]">Mon</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-[14px] text-[#a59cba] truncate">Alex: Updated the Figma file.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed right-4 bottom-[90px] w-14 h-14 rounded-full bg-gradient-to-r from-primary to-[#7033f5] text-white shadow-lg shadow-primary/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined text-[24px]">edit</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="glass-nav fixed bottom-0 w-full h-[83px] border-t border-border-dark z-50 pb-5">
+<div class="grid grid-cols-4 h-full w-full">
+<button class="flex flex-col items-center justify-center gap-1 text-primary w-full">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="text-[10px] font-medium">Chats</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-[#a59cba] hover:text-white transition-colors w-full">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<span class="text-[10px] font-medium">Contacts</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-[#a59cba] hover:text-white transition-colors w-full">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="text-[10px] font-medium">Alerts</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-[#a59cba] hover:text-white transition-colors w-full">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

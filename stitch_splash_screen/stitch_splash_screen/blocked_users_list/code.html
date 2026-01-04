@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blocked Users List</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102222",
+                        "surface-dark": "#162a2a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #102222; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e3636; 
+            border-radius: 2px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black text-white font-display min-h-screen flex justify-center items-start sm:items-center p-0 sm:p-4">
+<!-- Mobile Screen Container -->
+<div class="w-full max-w-md bg-background-dark sm:rounded-2xl sm:border sm:border-gray-800 shadow-2xl overflow-hidden min-h-[800px] flex flex-col relative">
+<!-- Header (TopAppBar) -->
+<header class="sticky top-0 z-20 bg-background-dark/95 backdrop-blur-md border-b border-gray-800/50">
+<!-- Status Bar Placeholder (iOS safe area) -->
+<div class="h-11 w-full"></div>
+<div class="flex items-center justify-between px-4 pb-3">
+<button class="flex items-center justify-center size-10 text-white hover:bg-white/5 rounded-full transition-colors group">
+<span class="material-symbols-outlined group-active:scale-95 transition-transform">arrow_back_ios_new</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="text-white text-[17px] font-semibold leading-tight tracking-tight">Blocked Users</h1>
+<span class="text-slate-400 text-[11px] font-medium tracking-wide">2 blocked</span>
+</div>
+<!-- Spacer for visual balance -->
+<div class="size-10"></div>
+</div>
+</header>
+<!-- Main Content List -->
+<main class="flex-1 overflow-y-auto pb-8">
+<!-- List Item 1 -->
+<div class="group relative flex items-center gap-4 px-4 min-h-[72px] py-3 active:bg-surface-dark transition-colors border-b border-gray-800/30">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-[44px] grayscale opacity-80" data-alt="Profile picture of Jane Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCk7P2H7bzNntPuXwAhE7j4cJvsYGahllbNYsFnmUpAalVIh4xijorsaBwgtkWIAiWdNjaJgtdxfwPV7OGp9HLmJrFZKjPjduF6P1NgA5GkNhq3114qsEHxICqS1R8DxXGKCkbF1ZDZvYldBiLn6HukTtdbAzwGfvqljiG21cEKJdIUG9A12tvk_aBEw7c_3U1SW5M2KQhOCRTTRdaFh_oKNF37v-DYTFD5XJBQNP3mh3N6gRMA1CC4idkjwh6WxlNj4ZotKoSfKA");'>
+</div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0 gap-0.5">
+<p class="text-white text-[15px] font-medium leading-none truncate">Jane Doe</p>
+<p class="text-slate-400 text-[13px] font-normal leading-none truncate">@janedoe_real</p>
+</div>
+<div class="shrink-0">
+<button class="flex items-center justify-center rounded-lg h-[30px] px-3.5 border border-primary text-primary bg-transparent hover:bg-primary/10 active:scale-95 transition-all">
+<span class="text-[12px] font-semibold tracking-wide uppercase">Unblock</span>
+</button>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="group relative flex items-center gap-4 px-4 min-h-[72px] py-3 active:bg-surface-dark transition-colors border-b border-gray-800/30">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-[44px] grayscale opacity-80" data-alt="Abstract robot avatar for spam bot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAcAioOhrByVo0j-obU0H7CH-nPVoqCH41qS2qn92DYjRPUrWuWmoRZi577VsCBuHNjS0d3UzkO-1LbEcJtzr3z0h8L5q_Xvsqj8OMAUh5LhnNkvKpx7zmfHXwX7fePCNEVnK3ZLhRKGzVxLBiPC9NGFw5NbnST28EdkN2izCd4jP83UvyhJn6VViBrNeQU06SthseRRBS3rQH6F17JeMtSkfFbf42y_EXQkZRZuCPrqwH5Bhko6vcaxVgvbRWP1CfpV2TD4l1HFg");'>
+</div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0 gap-0.5">
+<p class="text-white text-[15px] font-medium leading-none truncate">Spam Bot 3000</p>
+<p class="text-slate-400 text-[13px] font-normal leading-none truncate">@promo_bot</p>
+</div>
+<div class="shrink-0">
+<button class="flex items-center justify-center rounded-lg h-[30px] px-3.5 border border-primary text-primary bg-transparent hover:bg-primary/10 active:scale-95 transition-all">
+<span class="text-[12px] font-semibold tracking-wide uppercase">Unblock</span>
+</button>
+</div>
+</div>
+<!-- MetaText Footer -->
+<div class="px-6 py-6 mt-2">
+<p class="text-slate-500 text-[13px] font-normal leading-relaxed text-center">
+                    Blocked users cannot send you messages or see your online status.
+                </p>
+</div>
+<!-- DEMO SECTION: Empty State Visualization -->
+<!-- In a real app, this would replace the list items above when the list is empty. 
+                 Shown here for design demonstration purposes. -->
+<div class="mt-12 pt-8 border-t border-dashed border-gray-800">
+<p class="text-[10px] font-mono text-gray-600 uppercase tracking-widest text-center mb-4">State: Empty List</p>
+<div class="flex flex-col items-center justify-center p-6 min-h-[300px]">
+<div class="size-16 rounded-2xl bg-surface-dark flex items-center justify-center mb-6 shadow-lg shadow-black/20">
+<span class="material-symbols-outlined text-primary text-3xl">gpp_good</span>
+</div>
+<h3 class="text-white text-lg font-bold mb-2 text-center">No blocked users</h3>
+<p class="text-slate-400 text-sm font-normal text-center max-w-[260px] leading-relaxed">
+                        Users you block won't be able to contact you
+                    </p>
+</div>
+</div>
+</main>
+<!-- Bottom Safe Area -->
+<div class="h-6 w-full bg-background-dark"></div>
+</div>
+</body></html>

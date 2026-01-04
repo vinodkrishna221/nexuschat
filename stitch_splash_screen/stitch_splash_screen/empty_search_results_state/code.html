@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Empty Search Results State</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#338ce6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a242f", // Slightly lighter than background-dark
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetic on non-mobile devices testing */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 3px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary/30">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Header / Search Area -->
+<header class="sticky top-0 z-10 w-full bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+<!-- Status Bar Placeholder (iOS style) -->
+<div class="h-12 w-full flex items-center justify-between px-6 pt-2">
+<span class="text-sm font-semibold dark:text-white">9:41</span>
+<div class="flex gap-1.5">
+<div class="material-symbols-outlined text-[18px] dark:text-white" style="font-size: 18px;">signal_cellular_alt</div>
+<div class="material-symbols-outlined text-[18px] dark:text-white" style="font-size: 18px;">wifi</div>
+<div class="material-symbols-outlined text-[18px] dark:text-white" style="font-size: 18px;">battery_full</div>
+</div>
+</div>
+<div class="px-4 pb-4 pt-2">
+<div class="flex items-center gap-3">
+<div class="relative flex flex-1 items-center h-10">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined" style="font-size: 20px;">search</span>
+</div>
+<input class="block w-full rounded-lg border-0 py-2 pl-10 pr-10 text-slate-900 dark:text-white bg-slate-200/50 dark:bg-surface-dark placeholder:text-slate-500 focus:ring-2 focus:ring-primary/50 focus:bg-white dark:focus:bg-surface-dark transition-all text-base leading-normal" placeholder="Search" type="text" value="Quantum physics discussion"/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer">
+<span class="material-symbols-outlined" style="font-size: 20px;">cancel</span>
+</button>
+</div>
+<button class="text-primary font-semibold text-base whitespace-nowrap active:opacity-70">
+                        Cancel
+                    </button>
+</div>
+<!-- Filter Tabs (Optional context for search) -->
+<div class="flex gap-2 mt-4 overflow-x-auto no-scrollbar pb-1">
+<button class="px-4 py-1.5 rounded-full bg-primary text-white text-sm font-medium transition-colors">All</button>
+<button class="px-4 py-1.5 rounded-full bg-slate-200 dark:bg-surface-dark text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">People</button>
+<button class="px-4 py-1.5 rounded-full bg-slate-200 dark:bg-surface-dark text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">Messages</button>
+<button class="px-4 py-1.5 rounded-full bg-slate-200 dark:bg-surface-dark text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">Media</button>
+</div>
+</div>
+</header>
+<!-- Main Content: Empty State -->
+<main class="flex-1 flex flex-col items-center justify-center px-8 py-12 min-h-[50vh]">
+<div class="w-full max-w-[320px] flex flex-col items-center text-center animate-fade-in-up">
+<!-- Illustration Container -->
+<div class="relative mb-8 group cursor-default">
+<!-- Subtle Glow effect behind -->
+<div class="absolute inset-0 bg-primary/20 dark:bg-primary/10 rounded-full blur-2xl transform scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+<div class="relative w-40 h-40 bg-slate-100 dark:bg-surface-dark rounded-full flex items-center justify-center shadow-sm dark:shadow-none transition-transform duration-500 hover:scale-105">
+<!-- Custom CSS Illustration using Tailwind gradients and masks could go here, but using an image as requested with styling -->
+<!-- Using a background image container to simulate the illustration area -->
+<div class="w-full h-full rounded-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-200 dark:from-slate-800 dark:to-slate-900 overflow-hidden">
+<!-- Using Material Icons to build a composite illustration to ensure high quality vector look without external images -->
+<div class="relative">
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600 text-[80px]" style="font-variation-settings: 'wght' 200;">search</span>
+<span class="absolute -top-1 -right-2 material-symbols-outlined text-primary text-[40px] drop-shadow-md bg-white dark:bg-background-dark rounded-full p-1" style="font-variation-settings: 'FILL' 1, 'wght' 700;">question_mark</span>
+</div>
+</div>
+</div>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold mb-3 tracking-tight">
+                    No results found
+                </h2>
+<p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed mb-8 max-w-[260px]">
+                    We couldn't find any matches for "Quantum physics discussion". Try a different search term.
+                </p>
+<button class="w-full sm:w-auto min-w-[140px] flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-200 dark:bg-surface-dark hover:bg-slate-300 dark:hover:bg-slate-700 active:scale-95 text-slate-900 dark:text-white font-semibold text-sm transition-all duration-200 group">
+<span class="material-symbols-outlined text-[20px] group-hover:rotate-90 transition-transform duration-300">close</span>
+                    Clear Search
+                </button>
+</div>
+</main>
+<!-- Footer / Recent Searches Suggestion (Optional but good UX) -->
+<div class="px-6 py-8 border-t border-slate-100 dark:border-slate-800/50">
+<h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 pl-2">Recent Searches</h3>
+<div class="flex flex-col gap-1">
+<button class="flex items-center gap-4 p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-surface-dark/50 transition-colors text-left group">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">history</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-900 dark:text-slate-200 truncate group-hover:text-primary transition-colors">Team Dinner</p>
+<p class="text-xs text-slate-500 dark:text-slate-500 truncate">in Messages</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-[20px]">chevron_right</span>
+</button>
+<button class="flex items-center gap-4 p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-surface-dark/50 transition-colors text-left group">
+<div class="bg-center bg-no-repeat bg-cover rounded-full w-10 h-10" data-alt="Profile picture of Sarah Miller" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBKFHEnlk0HKfyi9YA5BdkGuZC4gIaM8QbOo5Hm7PYT3O9pIhOkMLCsy-enG9ReX1IijoINBbVfY2yLuxpEXO1fx6F87F-6SMxWJrjtWFvORO8YLJy-NNGFtjTsydiCyGkJRZhj__9hOlNQPLv8XpR5N_dokIpoihny9CjphLJi0GA14nR9-zbOWpz-WyKs1Tc7jMuX2blQK5uaTvHsqUOPkoC0m61AH82REqzJHpjADZwCv7Iby_UkpiIBgM5eUAAoMRhdiaQ4AA");'></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-900 dark:text-slate-200 truncate group-hover:text-primary transition-colors">Sarah Miller</p>
+<p class="text-xs text-slate-500 dark:text-slate-500 truncate">Online 5m ago</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- iOS Home Indicator Safe Area -->
+<div class="h-6 w-full"></div>
+</div>
+</body></html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding Screen</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#895af6",
+              "background-light": "#f6f5f8",
+              "background-dark": "#151022",
+              "custom-dark-start": "#0A0A0F",
+              "custom-dark-end": "#12121A",
+              "accent-cyan": "#22D3EE",
+              "accent-purple": "#8B5CF6",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "md": "0.375rem", // 6px
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            boxShadow: {
+                'glow': '0 0 20px rgba(137, 90, 246, 0.5)',
+                'glow-cyan': '0 0 20px rgba(34, 211, 238, 0.4)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom styles for the network animation feel */
+        .node-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .node-float-delayed {
+            animation: float 8s ease-in-out infinite 1s;
+        }
+        .node-float-reverse {
+            animation: float-reverse 7s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes float-reverse {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased text-white overflow-hidden">
+<!-- Main Container -->
+<div class="relative flex h-screen w-full flex-col bg-gradient-to-b from-custom-dark-start to-custom-dark-end overflow-hidden">
+<!-- Abstract Background Glows -->
+<div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute top-[20%] right-[-10%] w-[400px] h-[400px] bg-accent-cyan/10 rounded-full blur-[80px] pointer-events-none"></div>
+<!-- Illustration Section (Top 60%) -->
+<div class="relative flex-1 w-full flex items-center justify-center perspective-[1000px]">
+<!-- Connection Lines (SVG) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-40" xmlns="http://www.w3.org/2000/svg">
+<!-- Lines connecting central nodes -->
+<line stroke="url(#grad1)" stroke-width="1.5" x1="50%" x2="20%" y1="40%" y2="25%"></line>
+<line stroke="url(#grad1)" stroke-width="1.5" x1="50%" x2="80%" y1="40%" y2="30%"></line>
+<line stroke="url(#grad2)" stroke-width="1.5" x1="50%" x2="30%" y1="40%" y2="60%"></line>
+<line stroke="url(#grad2)" stroke-width="1.5" x1="50%" x2="70%" y1="40%" y2="65%"></line>
+<line stroke="url(#grad1)" stroke-opacity="0.5" stroke-width="1" x1="80%" x2="90%" y1="30%" y2="50%"></line>
+<line stroke="url(#grad2)" stroke-opacity="0.5" stroke-width="1" x1="20%" x2="10%" y1="25%" y2="45%"></line>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#22D3EE;stop-opacity:0.2"></stop>
+</lineargradient>
+<lineargradient id="grad2" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#22D3EE;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.2"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Nodes Container -->
+<div class="relative w-full h-full max-w-md mx-auto">
+<!-- Central User Node (Hero) -->
+<div class="absolute top-[40%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-20 node-float">
+<div class="relative p-1 rounded-full bg-gradient-to-tr from-primary to-accent-cyan shadow-glow">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-[#131118] bg-[#131118]">
+<img alt="Portrait of a young woman with a neutral expression, representing the main user" class="w-full h-full object-cover" data-alt="Main user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDekEh8j_oYz459suVw_8BiYlG-Y2eGoz7OiYaY_6oBb0XBmMT6KrjKEJdyYqVVZXLpNfXgcts76dXlvE0Qvg8_mUpxZmxGs-WcvSzfq2wukAJgNHtsdz0TBwlDcY2htL1Tl3Uh5aZn0pXQl7gCiOG9Fi5tZXM5ntlbntXVEBu_y_TiRweVvyidpFd2JHkM9Ftu49A_I-AyW5vneRwUlZKKrwnbYos2SoZGMCDKl0JSe0_LwxfMP2-joH2eihaJfQvmtYCZDIrxjQ"/>
+</div>
+<!-- Status Dot -->
+<div class="absolute bottom-2 right-2 w-5 h-5 bg-green-500 rounded-full border-4 border-[#131118] z-30"></div>
+</div>
+</div>
+<!-- Surrounding Node 1 (Top Left) -->
+<div class="absolute top-[25%] left-[15%] z-10 node-float-delayed">
+<div class="relative p-[2px] rounded-full bg-gradient-to-br from-accent-cyan to-transparent shadow-glow-cyan">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-[#131118] bg-[#131118]">
+<img alt="Portrait of a man looking to the side" class="w-full h-full object-cover opacity-90" data-alt="Connected friend profile avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3TSgyvoapO6OUZUnrovKCfd_pd6gfaMUVvsG2Z1YcktFQbnzvapzGf9-7y9wa4ENRassQF4ciUvRgGeZDXmraOTmc5azXBt0NJ8CGRqdxQSlK0CXhTFeVWIYHdJx_r9y5NA1EY7OUfJiUWOyamS6zFytJVOvRC4w89yaiso93OAS7pAGaOmajx8v_qROhnJZMGLuJFzOFCjNj9iWqyAHpgD0ArbmVI6N6bx8Psmbh5b8NvaedsWIzzwOukzU6XsJPEKKKni0kSA"/>
+</div>
+<div class="absolute bottom-1 right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-[#131118]"></div>
+</div>
+</div>
+<!-- Surrounding Node 2 (Top Right) -->
+<div class="absolute top-[30%] right-[15%] z-10 node-float-reverse">
+<div class="relative p-[2px] rounded-full bg-gradient-to-bl from-primary to-transparent">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-[#131118] bg-[#131118]">
+<img alt="Portrait of a smiling woman" class="w-full h-full object-cover opacity-80" data-alt="Connected friend profile avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD_vdfJjzXW-8JEw62eo3wFFlP83rD4KPtbMXMbQPmYvy05Qc-mAdQ7MBXTprR3aaWErwc_LSpZ2rExSNvWu79hRrxVi1-t07bqCthfO30ETaJWrVdK99wPN6Bf_5WUnSkUIvEGUakA50MLczsoBrPU2QtWrOsWba6GxksHRUod1-vjybjYPXEkg0YsytZnp91KYpl-9S24zEbxsVhyzPVZLrkVp6dWVA_12IhSZLhcVVROURAjo2U13ZaRfNE5bjdjst71s-uLg"/>
+</div>
+</div>
+</div>
+<!-- Surrounding Node 3 (Bottom Left) -->
+<div class="absolute bottom-[35%] left-[25%] z-10 node-float">
+<div class="relative p-[2px] rounded-full bg-gradient-to-tr from-primary to-transparent">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-[#131118] bg-[#131118]">
+<img alt="Portrait of a man with glasses" class="w-full h-full object-cover opacity-70" data-alt="Connected friend profile avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNGAMWd03zof059_wL2TiVNJaTzQZb08-SId3AoJ-lnvyuDcyxZQBV7oWXcnCEiTbkd1G5JnMj5QvZJqQJUB_1hwxNcVuNsRcsYLwgQ2IQqxWs6sPyxQ8h14iDzvgBUygp4nEq-GCm5nTHjFcOdeR4Vl26DODZ50qFwIXtHE8rzbdQsmyrlZCM0C5o3aJGCEsm8pG-6uJJVugXJN2059YDAzpbd3geQPB8jzwGBVqQvpMIhnE45_44DLpxRx-fGTTGV4Ak8tWQbg"/>
+</div>
+</div>
+</div>
+<!-- Surrounding Node 4 (Bottom Right) -->
+<div class="absolute bottom-[30%] right-[25%] z-10 node-float-delayed">
+<div class="relative p-[2px] rounded-full bg-gradient-to-tl from-accent-cyan to-transparent shadow-glow-cyan">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-[#131118] bg-[#131118]">
+<img alt="Portrait of a young person in urban setting" class="w-full h-full object-cover opacity-90" data-alt="Connected friend profile avatar 4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBChFQ582q1QccqQuek1lq_h6YEkiN_xpzeF2X6kWSMDARsq_7VzvYd2Nh1K-KCh49GlCUp-Zodu7D1FVTMYVY6pB-moMNobxorSaePJo-d4SHUHNYJtIsAVNxHHHyuGlXnFxJCDl__T-8yEDSp8hZQ1Km6aSVQGiWs2IPYzr0ilT8lOoKwxwBMsy7Dceiyq0VND4Hcn78Q0BmIzTNkheTLKb9bo74ZkMlWnMMRGcwBynPF1ZIAz03XAnB8_3DDAikGTxrhtWBHdA"/>
+</div>
+<div class="absolute bottom-1 right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-[#131118]"></div>
+</div>
+</div>
+<!-- Distant Nodes (Small decorative dots) -->
+<div class="absolute top-[15%] left-[40%] w-2 h-2 rounded-full bg-white/20 blur-[1px]"></div>
+<div class="absolute top-[50%] right-[5%] w-3 h-3 rounded-full bg-primary/30 blur-[1px]"></div>
+<div class="absolute bottom-[20%] left-[10%] w-2 h-2 rounded-full bg-accent-cyan/20 blur-[1px]"></div>
+</div>
+</div>
+<!-- Content Section (Bottom 40%) -->
+<div class="relative w-full z-20 flex flex-col items-center justify-end px-6 pb-12 pt-4 bg-gradient-to-t from-[#12121A] via-[#12121A] to-transparent">
+<!-- Pagination -->
+<div class="flex w-full flex-row items-center justify-center gap-3 py-6">
+<div class="h-2.5 w-2.5 rounded-full border border-white/30 bg-transparent"></div>
+<div class="h-2.5 w-2.5 rounded-full bg-primary shadow-glow"></div>
+<div class="h-2.5 w-2.5 rounded-full border border-white/30 bg-transparent"></div>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col gap-3 text-center mb-10 max-w-xs mx-auto">
+<h1 class="text-white text-[28px] font-bold leading-tight">Stay Connected</h1>
+<p class="text-white/60 text-base font-normal leading-relaxed">
+                    See when friends are online and never miss a moment
+                </p>
+</div>
+<!-- Actions -->
+<div class="w-full flex flex-col items-center gap-4">
+<!-- Skip Link -->
+<button class="text-white/40 text-sm font-medium hover:text-white transition-colors cursor-pointer">
+                    Skip
+                </button>
+<!-- Main Button -->
+<button class="relative w-full cursor-pointer flex items-center justify-center overflow-hidden rounded-md h-[56px] bg-gradient-to-r from-primary to-accent-purple shadow-glow hover:shadow-lg hover:shadow-primary/50 transition-all active:scale-[0.98]">
+<span class="relative z-10 text-white text-[16px] font-semibold tracking-wide">Next</span>
+<!-- Shine effect overlay -->
+<div class="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity"></div>
+</button>
+</div>
+</div>
+</div>
+</body></html>

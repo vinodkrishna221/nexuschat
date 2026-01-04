@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7339ef",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0B0A0F", 
+                        "glass-surface": "#12121A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'gradient-avatar': 'linear-gradient(to top right, #8B5CF6, #22D3EE)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary/30">
+<div class="relative min-h-screen w-full flex flex-col max-w-md mx-auto overflow-hidden bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Header -->
+<div class="sticky top-0 z-50 flex items-center justify-between p-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Profile</h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 24px;">edit</span>
+</button>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto no-scrollbar pb-8 px-4">
+<!-- Profile Info Section -->
+<div class="flex flex-col items-center mt-2 mb-6">
+<!-- Avatar with Gradient Ring & Badge -->
+<div class="relative group cursor-pointer">
+<div class="w-[104px] h-[104px] rounded-full bg-gradient-avatar p-[3px] shadow-lg shadow-primary/20">
+<div class="w-full h-full rounded-full border-4 border-background-light dark:border-background-dark bg-gray-800 overflow-hidden">
+<img alt="Profile portrait of a smiling man" class="w-full h-full object-cover" data-alt="Profile portrait of a smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzpFtnvP1niauf-ZD337DUS5fiEXxjijYqpVqAlSj8pJ-AW2hy789DYrvxDAHZYHxQb-5wI0_IVMqGCs-z-5gP2TOXq0GzOEArdxflbxAGUdf0Eug_6rmZ_cfvgMo1-gB55cBekv6KEz_Vw2d75dd9CTQ-tQKoooSDZ1lqeqvMwSJ6bVRIKAwtUNouhn4TqMZw8kjCtjQUc9XbVYSAbCtQ9qSerR8imm8BUlMY8DZoAHOFXKH_G5B5Boo9l8XZqCa3Tz-S15KFZg"/>
+</div>
+</div>
+<!-- Camera Badge -->
+<div class="absolute bottom-1 right-1 bg-background-dark border border-gray-700 rounded-full p-1.5 flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-white text-[16px]">photo_camera</span>
+</div>
+</div>
+<!-- Text Info -->
+<div class="text-center mt-4 space-y-1">
+<h2 class="text-[22px] font-bold text-slate-900 dark:text-white leading-tight">John Doe</h2>
+<p class="text-[14px] font-medium text-[#22D3EE]">@johndoe</p>
+<p class="text-[14px] text-slate-500 dark:text-gray-400">Available ✨</p>
+</div>
+</div>
+<!-- Bio Card (Glass) -->
+<div class="relative w-full rounded-2xl bg-white dark:bg-[#1E1E24]/60 dark:backdrop-blur-md border border-slate-200 dark:border-white/5 p-5 mb-5 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-gray-500">Bio</span>
+<button class="text-slate-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<p class="text-[15px] leading-relaxed text-slate-700 dark:text-gray-200 font-medium">
+                    Flutter developer &amp; coffee enthusiast. Building cool things!
+                </p>
+</div>
+<!-- Quick Stats Row -->
+<div class="grid grid-cols-3 gap-3 mb-6">
+<!-- Chats -->
+<div class="flex flex-col items-center justify-center p-3 rounded-xl bg-white dark:bg-[#1E1E24]/40 dark:backdrop-blur-sm border border-slate-200 dark:border-white/5 shadow-sm h-24">
+<span class="text-2xl font-bold text-slate-900 dark:text-white mb-1">24</span>
+<span class="text-xs text-slate-500 dark:text-gray-400 font-medium">Chats</span>
+</div>
+<!-- Contacts -->
+<div class="flex flex-col items-center justify-center p-3 rounded-xl bg-white dark:bg-[#1E1E24]/40 dark:backdrop-blur-sm border border-slate-200 dark:border-white/5 shadow-sm h-24">
+<span class="text-2xl font-bold text-slate-900 dark:text-white mb-1">89</span>
+<span class="text-xs text-slate-500 dark:text-gray-400 font-medium">Contacts</span>
+</div>
+<!-- Joined -->
+<div class="flex flex-col items-center justify-center p-3 rounded-xl bg-white dark:bg-[#1E1E24]/40 dark:backdrop-blur-sm border border-slate-200 dark:border-white/5 shadow-sm h-24">
+<span class="text-lg font-bold text-slate-900 dark:text-white mb-1 whitespace-nowrap">Jan 2026</span>
+<span class="text-xs text-slate-500 dark:text-gray-400 font-medium">Joined</span>
+</div>
+</div>
+<!-- Settings List -->
+<div class="flex flex-col space-y-1 mb-6">
+<!-- Notification -->
+<button class="group flex items-center justify-between w-full h-14 px-1 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<span class="text-[15px] font-medium text-slate-900 dark:text-white">Notifications</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-gray-600 group-hover:text-slate-600 dark:group-hover:text-white transition-colors">chevron_right</span>
+</button>
+<!-- Appearance -->
+<button class="group flex items-center justify-between w-full h-14 px-1 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-[15px] font-medium text-slate-900 dark:text-white">Appearance</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-500 dark:text-gray-400">Dark</span>
+<span class="material-symbols-outlined text-slate-400 dark:text-gray-600 group-hover:text-slate-600 dark:group-hover:text-white transition-colors">chevron_right</span>
+</div>
+</button>
+<!-- Privacy -->
+<button class="group flex items-center justify-between w-full h-14 px-1 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<span class="text-[15px] font-medium text-slate-900 dark:text-white">Privacy &amp; Security</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-gray-600 group-hover:text-slate-600 dark:group-hover:text-white transition-colors">chevron_right</span>
+</button>
+<!-- Chat Settings -->
+<button class="group flex items-center justify-between w-full h-14 px-1 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<span class="text-[15px] font-medium text-slate-900 dark:text-white">Chat Settings</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-gray-600 group-hover:text-slate-600 dark:group-hover:text-white transition-colors">chevron_right</span>
+</button>
+<!-- Help -->
+<button class="group flex items-center justify-between w-full h-14 px-1 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">help</span>
+</div>
+<span class="text-[15px] font-medium text-slate-900 dark:text-white">Help &amp; Support</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-gray-600 group-hover:text-slate-600 dark:group-hover:text-white transition-colors">chevron_right</span>
+</button>
+<!-- About -->
+<button class="group flex items-center justify-between w-full h-14 px-1 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">info</span>
+</div>
+<span class="text-[15px] font-medium text-slate-900 dark:text-white">About</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-gray-600 group-hover:text-slate-600 dark:group-hover:text-white transition-colors">chevron_right</span>
+</button>
+<!-- Log Out -->
+<button class="group flex items-center justify-between w-full h-14 px-1 mt-4 rounded-xl hover:bg-red-500/10 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-[#F43F5E]/10 text-[#F43F5E]">
+<span class="material-symbols-outlined">door_open</span>
+</div>
+<span class="text-[15px] font-bold text-[#F43F5E]">Log Out</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</body></html>

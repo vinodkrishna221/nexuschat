@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>View Other User Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c2bee",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                        "surface-dark": "#241a33",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white min-h-screen flex flex-col items-center">
+<!-- Mobile Container -->
+<div class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen relative shadow-2xl overflow-x-hidden pb-10">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 flex items-center justify-between p-4 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 24px;">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Profile Header -->
+<div class="flex flex-col items-center px-6 pt-4 pb-6">
+<!-- Avatar -->
+<div class="relative group cursor-pointer mb-5">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-[100px] w-[100px] shadow-lg border-2 border-background-light dark:border-background-dark ring-2 ring-primary/50" data-alt="Portrait of Sarah Williams" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEWoHW2E8I0vosbMVOIAjiElNWAyda7ln3Hat2q4CjD9jVbJVy4Fzhcfmy-iJBRcqIkhEZGModxMbjVdiwsychTXlAHfNNUkc9HHqrhi4eMDBdb0xHGc7sGER7pBQm-li-rYnOS8wEwSS_w9eckkzeKX3xpZWEZiY2Z97lo7hrnO6XBQvQ5fY3AaMvJj18dfAA4LbtmLtzS870-gBBWGw7T1FMqDpSfK807b-QmhwiyKg-_DF7rHCLxNbdCiYVK4zlIi1zfgNUDw");'>
+</div>
+<div class="absolute bottom-1 right-1 size-4 bg-green-500 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<!-- Identity -->
+<div class="flex flex-col items-center text-center gap-1">
+<h1 class="text-2xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">Sarah Williams</h1>
+<p class="text-cyan-500 dark:text-cyan-400 text-sm font-medium">@sarahw</p>
+</div>
+<!-- Status Pill -->
+<div class="mt-4 flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-surface-dark/5 dark:bg-surface-dark border border-black/5 dark:border-white/5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-300">Online • Working on something cool 🚀</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="px-6 pb-8">
+<div class="flex gap-3 justify-center">
+<button class="flex-1 h-12 flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-primary to-purple-600 text-white font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-primary/25">
+<span class="material-symbols-outlined" style="font-size: 20px;">chat_bubble</span>
+                    Message
+                </button>
+<button class="h-12 w-12 sm:w-auto sm:px-6 flex items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 font-bold text-sm hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">block</span>
+<span class="hidden sm:inline">Block</span>
+</button>
+</div>
+</div>
+<!-- Bio & Details Card -->
+<div class="px-4 pb-6">
+<div class="relative overflow-hidden rounded-xl bg-white/50 dark:bg-white/5 backdrop-blur-md border border-slate-200/50 dark:border-white/10 p-5">
+<div class="flex flex-col gap-4">
+<div>
+<h3 class="text-xs uppercase tracking-wider font-bold text-slate-400 dark:text-slate-500 mb-2">About</h3>
+<p class="text-base text-slate-700 dark:text-slate-200 leading-relaxed">
+                            Product designer by day, gamer by night. Love connecting with creative people!
+                        </p>
+</div>
+<div class="h-px bg-slate-200 dark:bg-white/10 w-full"></div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined" style="font-size: 18px;">calendar_month</span>
+<span>Member since January 2026</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Shared Content Section -->
+<div class="px-4 pb-8">
+<div class="flex items-center justify-between mb-4 px-1">
+<h3 class="text-sm font-bold text-slate-900 dark:text-white">Shared Content</h3>
+<button class="text-primary text-xs font-bold hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<!-- Image 1 -->
+<div class="aspect-square rounded-lg bg-surface-dark overflow-hidden relative group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Abstract colorful fluid art pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNskF2ImVd2tOFD6yc9Hae2_YqwZxquFtElk1f2sF18th0Ni6ryuASxc50JOYa30Q-xdcya4_5GGiIEsmEm7TmoyaJtZ_P8P752Nfb3MGE7QhbEGNhwSlW7j5bNIRIpEJ9yD9iCuFEwgvbjxjKxM_QIFStjQBb4CFGxjgSg6n1-W1FI5Wac6NkeTgMu0DYKTHRUNj1OFI4tTGALtVggWya3MRJitLyMYqISu6-DqQ9BhohqYDKb36zEnmnFSdEAqj17LVglq8cxQ");'>
+</div>
+</div>
+<!-- Image 2 -->
+<div class="aspect-square rounded-lg bg-surface-dark overflow-hidden relative group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Minimalist architectural detail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8Id4VjgBvG56xmZDVnmJQlpTA0JsbnQF3txfF3H1QfVeCQeVtGfuMwau6QJde-E1D_Uh4vrmWQ-OhB9SV3_cf9-AUwvmpwycfFnd6E3XachX1fgtP1imHlWLmXAWOYpPWxco6gwlY8ZN4dBfwItd-fNrkPEurtCStpsrCJo0JCZ_JwW332awlxEbVNUc9smW5D-aemnbDAgQ-Zu_h-aXq-YjuByx84O-Y2LT_uAysuzkNkh0BpUvEIjwojv7pYlXPm7ucbZy12g");'>
+</div>
+</div>
+<!-- Image 3 -->
+<div class="aspect-square rounded-lg bg-surface-dark overflow-hidden relative group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Workspace with laptop and coffee" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAk21inUCu5OH_xoJyqegITnpZemdXUZJ1wmEebDeKrbaJCjsbNvqed30OHnpg7hn8EABf8GTSdABzU7E517HL1lQG0YtCjrXIsJ_tWXB_Xrq_TIWbC6_iO_ARVkBB2Jw-EqiAe6jG9XvmaRkRDIctIcWOQcIYh7VSEfHzeutBggfJf8T8qdmWHWme3IY0PDQnNMIByHOtysXXJ1QTwxuzcTxMEje_UwdivJyCAag9oTrfWYOsvUm7AQMBjr8e1NFAkwmZ5TO7aQQ");'>
+</div>
+</div>
+<!-- Link Preview / Doc -->
+<div class="aspect-square rounded-lg bg-slate-200 dark:bg-surface-dark flex flex-col items-center justify-center gap-2 text-slate-500 dark:text-slate-400 border border-slate-300 dark:border-white/5">
+<span class="material-symbols-outlined" style="font-size: 28px;">description</span>
+<span class="text-[10px] font-medium">Resume.pdf</span>
+</div>
+<!-- Image 4 -->
+<div class="aspect-square rounded-lg bg-surface-dark overflow-hidden relative group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Mountain landscape at sunset" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCdsgCS-GogDYeQ6ssDZj-e_GviJJvmTbcMTdK36yQwoRwx6tTDhOapl42saMtpjNyIH3zeXfTvDeW4CL0IUjWCtuy7-KUJeooSehVAsX-L6UVTXRzyL6VIg-hN1NNZPqoOTbNRt8DWAisjNU0H9TL7ObYmf_xlp8_mRtKMO0TK17Mi-ByGSDAtSUgdOQ6xkCwTV0j3vSdC2xjHeoh9Ao9gxbzv5pGCPp4ghiBgTAeBh90uNJJfBTCia2xAiSzFOmHHOVEOPul20Q");'>
+</div>
+</div>
+<!-- More count -->
+<div class="aspect-square rounded-lg bg-slate-200 dark:bg-surface-dark flex items-center justify-center cursor-pointer hover:bg-slate-300 dark:hover:bg-white/10 transition-colors">
+<span class="text-sm font-bold text-slate-600 dark:text-slate-300">+12</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

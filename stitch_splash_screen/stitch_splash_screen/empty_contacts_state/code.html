@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Empty Contacts State</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c2bee",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Utilities for icon sizing if needed */
+        .icon-lg { font-size: 48px !important; }
+        .icon-xl { font-size: 64px !important; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden">
+<!-- Top App Bar -->
+<header class="flex items-center justify-between px-4 py-3 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-[#111418] dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold leading-tight tracking-[-0.015em] text-[#111418] dark:text-white">
+                Contacts
+            </h1>
+<!-- Spacer to balance the back arrow -->
+<div class="size-10"></div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col items-center justify-center px-6 pb-20">
+<!-- Illustration Area -->
+<div class="relative mb-8">
+<!-- Main Avatar Circle -->
+<div class="flex items-center justify-center size-32 rounded-full bg-primary/10 dark:bg-primary/20">
+<span class="material-symbols-outlined text-primary !text-6xl opacity-80">person</span>
+</div>
+<!-- Badge -->
+<div class="absolute bottom-0 right-0 translate-x-1 -translate-y-1">
+<div class="flex items-center justify-center size-10 rounded-full bg-primary border-[4px] border-background-light dark:border-background-dark shadow-sm">
+<span class="material-symbols-outlined text-white !text-xl">add</span>
+</div>
+</div>
+</div>
+<!-- Empty State Text -->
+<div class="flex max-w-[320px] flex-col items-center gap-2 mb-8">
+<h2 class="text-[#111418] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] text-center">
+                    No contacts yet
+                </h2>
+<p class="text-[#637588] dark:text-[#9ca3af] text-base font-normal leading-normal text-center">
+                    Add friends to start messaging and sharing moments together.
+                </p>
+</div>
+<!-- Actions -->
+<div class="flex w-full max-w-[320px] flex-col gap-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary hover:bg-primary/90 transition-colors text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20">
+<span class="truncate">Add Contact</span>
+</button>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-transparent hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-primary text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Import from Phonebook</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="flex justify-around items-end border-t border-[#e5e7eb] dark:border-[#302839] bg-background-light dark:bg-[#211c27] px-4 pb-6 pt-2 w-full fixed bottom-0 z-20">
+<!-- Inactive Tab -->
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-[#637588] dark:text-[#ab9db9] hover:text-primary dark:hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 0;">chat_bubble</span>
+<span class="text-xs font-medium leading-normal tracking-[0.015em]">Chats</span>
+</a>
+<!-- Active Tab -->
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<span class="material-symbols-outlined scale-110" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-xs font-bold leading-normal tracking-[0.015em]">Contacts</span>
+</a>
+<!-- Inactive Tab -->
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-[#637588] dark:text-[#ab9db9] hover:text-primary dark:hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="text-xs font-medium leading-normal tracking-[0.015em]">Settings</span>
+</a>
+</nav>
+</div>
+</body></html>

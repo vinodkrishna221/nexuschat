@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding Screen</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#520df2",
+                        "cyan-glow": "#22D3EE",
+                        "background-dark": "#0A0A0F",
+                        "background-deeper": "#12121A",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    boxShadow: {
+                        'glow-primary': '0 0 30px -5px rgba(82, 13, 242, 0.6)',
+                        'glow-cyan': '0 0 40px -10px rgba(34, 211, 238, 0.4)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom animations for floating elements */
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        @keyframes float-medium {
+            0%, 100% { transform: translateY(0px) rotate(-5deg); }
+            50% { transform: translateY(-15px) rotate(0deg); }
+        }
+        @keyframes float-fast {
+            0%, 100% { transform: translateY(0px) scale(0.9); }
+            50% { transform: translateY(-8px) scale(1); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        
+        .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+        .animate-float-medium { animation: float-medium 5s ease-in-out infinite; }
+        .animate-float-fast { animation: float-fast 4s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0A0A0F] text-white antialiased selection:bg-cyan-500 selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col bg-gradient-to-b from-[#0A0A0F] to-[#12121A] overflow-hidden font-display group/design-root">
+<!-- Background Ambient Effects -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[60vh] overflow-hidden pointer-events-none z-0">
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-80 h-80 bg-primary/20 rounded-full blur-[100px]"></div>
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-64 h-64 bg-cyan-glow/10 rounded-full blur-[80px]"></div>
+</div>
+<!-- Main Content Wrapper -->
+<div class="relative z-10 flex flex-col flex-1 h-full w-full max-w-md mx-auto">
+<!-- Hero Section (Top ~60%) -->
+<div class="flex-1 flex flex-col items-center justify-center relative px-6 py-8 min-h-[50vh]">
+<!-- Floating Decorative Elements -->
+<div class="absolute top-[20%] left-[10%] animate-float-slow text-cyan-glow/60 opacity-60">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">key</span>
+</div>
+<div class="absolute top-[15%] right-[15%] animate-float-medium text-primary/60 opacity-50">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div class="absolute bottom-[25%] left-[15%] animate-float-fast text-white/40">
+<span class="material-symbols-outlined text-2xl">enhanced_encryption</span>
+</div>
+<div class="absolute bottom-[30%] right-[10%] animate-float-slow text-cyan-glow/40 delay-700">
+<span class="material-symbols-outlined text-4xl">check_circle</span>
+</div>
+<!-- Particle/Dots effects (simulated with absolute divs) -->
+<div class="absolute top-1/3 right-1/4 w-1 h-1 bg-white rounded-full opacity-60 animate-pulse"></div>
+<div class="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-cyan-glow rounded-full opacity-40 animate-pulse delay-1000"></div>
+<!-- Central Hero Image Container -->
+<div class="relative w-64 h-64 @[380px]:w-72 @[380px]:h-72 flex items-center justify-center">
+<!-- Glow behind the shield -->
+<div class="absolute inset-4 bg-cyan-glow/20 rounded-full blur-2xl animate-pulse-glow"></div>
+<!-- The Main Shield Image -->
+<div class="w-full h-full bg-center bg-no-repeat bg-contain z-10 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-transform duration-500 hover:scale-105" data-alt="3D glassmorphism shield icon with lock symbol glowing cyan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWXIuBoWSPXZ6jtwZ5HRrdGXGUX2UJKU-Pcs8uTZbO3PjXn8_5XxOCB1lBtN4Nq3Hfiee5AwLh6HymZMDGsgHaHXjo90bcp-s8Yz7LJc6iyFkzeqJgFalG7XED8orP4nzZRxLmlD6gNMS5bT5848uqJ1R8t17jccpCR8FJpaidbAVJ__QELRc-GJv8uRZ8GDLFCqhWJLkstGlpwkQQ6IdjjB4E0vXcssCIP6z38r6T0gu1N2qNdcL1v8Oj51ERcqLeycnXkHpC6A");'>
+</div>
+<!-- Glassmorphism overlay hint (visual polish) -->
+<div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent pointer-events-none"></div>
+</div>
+</div>
+<!-- Content Section (Bottom ~40%) -->
+<div class="flex flex-col items-center justify-end w-full pb-8 pt-4 px-6 rounded-t-[2rem] bg-gradient-to-b from-transparent to-[#12121A]/80 backdrop-blur-sm">
+<!-- Headline -->
+<div class="w-full text-center mb-3">
+<h2 class="text-white tracking-tight text-[32px] font-bold leading-[1.1] drop-shadow-lg">
+                        Your Privacy Matters
+                    </h2>
+</div>
+<!-- Body Text -->
+<div class="w-full text-center mb-10 max-w-[320px]">
+<p class="text-slate-400 text-base font-normal leading-relaxed">
+                        Your messages are protected with secure authentication and end-to-end encryption.
+                    </p>
+</div>
+<!-- Pagination Indicators -->
+<div class="flex w-full flex-row items-center justify-center gap-3 mb-8">
+<!-- Inactive Dot -->
+<div class="h-2 w-2 rounded-full bg-[#2d2738] transition-all duration-300"></div>
+<!-- Inactive Dot -->
+<div class="h-2 w-2 rounded-full bg-[#2d2738] transition-all duration-300"></div>
+<!-- Active Dot (Purple) -->
+<div class="h-2 w-8 rounded-full bg-primary shadow-[0_0_10px_#520df2] transition-all duration-300"></div>
+</div>
+<!-- Action Button -->
+<div class="w-full mb-6"> <!-- Added margin bottom for safe area -->
+<button class="relative w-full h-14 group overflow-hidden rounded-xl bg-gradient-to-r from-primary to-[#7c3aed] text-white shadow-glow-primary transition-all duration-300 hover:shadow-[0_0_40px_-5px_#520df2] hover:scale-[1.02] active:scale-[0.98]">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+<span class="relative flex items-center justify-center gap-2 text-[17px] font-bold tracking-wide">
+                            Get Started
+                            <span class="material-symbols-outlined text-[20px] font-bold group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</button>
+</div>
+<!-- Safe Area Spacer -->
+<div class="h-2 w-full"></div>
+</div>
+</div>
+</div>
+</body></html>

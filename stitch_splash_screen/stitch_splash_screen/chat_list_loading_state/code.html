@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chat List Loading State</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c2bee",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                        "skeleton-dark-start": "#1A1A24",
+                        "skeleton-dark-end": "#252532",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    animation: {
+                        shimmer: 'shimmer 2s linear infinite',
+                    },
+                    keyframes: {
+                        shimmer: {
+                            '0%': { backgroundPosition: '200% 0' },
+                            '100%': { backgroundPosition: '-200% 0' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles for the shimmer gradient */
+        .skeleton-shimmer {
+            background: linear-gradient(90deg, #1A1A24 0%, #2e2e3d 50%, #1A1A24 100%);
+            background-size: 200% 100%;
+        }
+        
+        /* Light mode variant for skeleton */
+        .light .skeleton-shimmer {
+            background: linear-gradient(90deg, #e5e7eb 0%, #f3f4f6 50%, #e5e7eb 100%);
+            background-size: 200% 100%;
+        }
+
+        /* Hide scrollbar for cleaner look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased overflow-hidden">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden mx-auto max-w-md shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-20 flex flex-col bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-white/5">
+<!-- Status Bar Spacer (Simulated) -->
+<div class="h-10 w-full bg-transparent"></div>
+<div class="flex items-center p-4 pb-2 justify-between">
+<h2 class="text-gray-900 dark:text-white text-3xl font-extrabold leading-tight tracking-[-0.015em] flex-1">Chats</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-primary/10 dark:bg-white/10 text-primary dark:text-white hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">edit_square</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3 pb-4">
+<label class="flex flex-col h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full bg-white dark:bg-[#302839] overflow-hidden shadow-sm dark:shadow-none ring-1 ring-black/5 dark:ring-white/10">
+<div class="text-gray-400 dark:text-[#ab9db9] flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none bg-transparent text-gray-900 dark:text-white focus:outline-0 placeholder:text-gray-400 dark:placeholder:text-[#ab9db9] h-full text-base font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+</div>
+</header>
+<!-- Main Content: Skeleton List -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-24 px-4 pt-2">
+<!-- Skeleton Item 1 -->
+<div class="flex items-center gap-4 py-4 border-b border-gray-100 dark:border-white/5">
+<div class="shrink-0">
+<div class="h-14 w-14 rounded-full skeleton-shimmer animate-shimmer"></div>
+</div>
+<div class="flex flex-col flex-1 gap-2">
+<div class="flex justify-between items-start">
+<div class="h-4 w-[60%] rounded-md skeleton-shimmer animate-shimmer"></div>
+<div class="h-3 w-10 rounded-md skeleton-shimmer animate-shimmer"></div>
+</div>
+<div class="h-3 w-[85%] rounded-md skeleton-shimmer animate-shimmer"></div>
+</div>
+</div>
+<!-- Skeleton Item 2 -->
+<div class="flex items-center gap-4 py-4 border-b border-gray-100 dark:border-white/5">
+<div class="shrink-0">
+<div class="h-14 w-14 rounded-full skeleton-shimmer animate-shimmer" style="animation-delay: 0.1s;"></div>
+</div>
+<div class="flex flex-col flex-1 gap-2">
+<div class="flex justify-between items-start">
+<div class="h-4 w-[50%] rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.1s;"></div>
+<div class="h-3 w-10 rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.1s;"></div>
+</div>
+<div class="h-3 w-[75%] rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.1s;"></div>
+</div>
+</div>
+<!-- Skeleton Item 3 -->
+<div class="flex items-center gap-4 py-4 border-b border-gray-100 dark:border-white/5">
+<div class="shrink-0">
+<div class="h-14 w-14 rounded-full skeleton-shimmer animate-shimmer" style="animation-delay: 0.2s;"></div>
+</div>
+<div class="flex flex-col flex-1 gap-2">
+<div class="flex justify-between items-start">
+<div class="h-4 w-[65%] rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.2s;"></div>
+<div class="h-3 w-10 rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.2s;"></div>
+</div>
+<div class="h-3 w-[90%] rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.2s;"></div>
+</div>
+</div>
+<!-- Skeleton Item 4 -->
+<div class="flex items-center gap-4 py-4 border-b border-gray-100 dark:border-white/5">
+<div class="shrink-0">
+<div class="h-14 w-14 rounded-full skeleton-shimmer animate-shimmer" style="animation-delay: 0.3s;"></div>
+</div>
+<div class="flex flex-col flex-1 gap-2">
+<div class="flex justify-between items-start">
+<div class="h-4 w-[55%] rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.3s;"></div>
+<div class="h-3 w-10 rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.3s;"></div>
+</div>
+<div class="h-3 w-[80%] rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.3s;"></div>
+</div>
+</div>
+<!-- Skeleton Item 5 -->
+<div class="flex items-center gap-4 py-4 border-b border-gray-100 dark:border-white/5">
+<div class="shrink-0">
+<div class="h-14 w-14 rounded-full skeleton-shimmer animate-shimmer" style="animation-delay: 0.4s;"></div>
+</div>
+<div class="flex flex-col flex-1 gap-2">
+<div class="flex justify-between items-start">
+<div class="h-4 w-[45%] rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.4s;"></div>
+<div class="h-3 w-10 rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.4s;"></div>
+</div>
+<div class="h-3 w-[70%] rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.4s;"></div>
+</div>
+</div>
+<!-- Skeleton Item 6 -->
+<div class="flex items-center gap-4 py-4">
+<div class="shrink-0">
+<div class="h-14 w-14 rounded-full skeleton-shimmer animate-shimmer" style="animation-delay: 0.5s;"></div>
+</div>
+<div class="flex flex-col flex-1 gap-2">
+<div class="flex justify-between items-start">
+<div class="h-4 w-[60%] rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.5s;"></div>
+<div class="h-3 w-10 rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.5s;"></div>
+</div>
+<div class="h-3 w-[80%] rounded-md skeleton-shimmer animate-shimmer" style="animation-delay: 0.5s;"></div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="absolute bottom-0 w-full bg-white dark:bg-[#191022] border-t border-gray-200 dark:border-white/5 pb-8 pt-2">
+<div class="flex justify-around items-center px-2">
+<!-- Nav Item 1 -->
+<button class="flex flex-col items-center gap-1 p-2 w-16 group">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 group-hover:text-primary transition-colors">groups</span>
+<span class="text-[10px] font-medium text-gray-400 dark:text-gray-500 group-hover:text-primary">Contacts</span>
+</button>
+<!-- Nav Item 2 (Active) -->
+<button class="flex flex-col items-center gap-1 p-2 w-16">
+<div class="relative">
+<span class="material-symbols-outlined text-primary fill-current">chat_bubble</span>
+<span class="absolute -top-1 -right-1 h-2.5 w-2.5 bg-red-500 rounded-full border-2 border-white dark:border-[#191022]"></span>
+</div>
+<span class="text-[10px] font-bold text-primary">Chats</span>
+</button>
+<!-- Nav Item 3 -->
+<button class="flex flex-col items-center gap-1 p-2 w-16 group">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 group-hover:text-primary transition-colors">settings</span>
+<span class="text-[10px] font-medium text-gray-400 dark:text-gray-500 group-hover:text-primary">Settings</span>
+</button>
+</div>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NexusChat Splash Screen</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#895bf5",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#151022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Utilities for detailed gradients unavailable in default Tailwind config */
+        .bg-glow-radial {
+            background: radial-gradient(circle at center, rgba(137, 91, 245, 0.15) 0%, rgba(10, 10, 15, 0) 70%);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(137, 91, 245, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0A0A0F] font-display min-h-screen flex flex-col items-center justify-between relative overflow-hidden text-white selection:bg-primary/30">
+<!-- Background Ambient Effects -->
+<div class="absolute inset-0 z-0 pointer-events-none">
+<!-- Central Glow -->
+<div class="absolute inset-0 bg-glow-radial"></div>
+<!-- Faint Floating Geometric Shapes/Particles -->
+<div class="absolute top-[15%] left-[10%] w-32 h-32 bg-primary/5 rounded-full blur-3xl" data-alt="Abstract ambient glow particle"></div>
+<div class="absolute bottom-[20%] right-[5%] w-64 h-64 bg-[#D946EF]/5 rounded-full blur-3xl" data-alt="Abstract ambient glow particle magenta"></div>
+<!-- Subtle Pattern/Texture -->
+<div class="absolute top-[30%] right-[20%] opacity-20">
+<div class="w-4 h-4 rounded-full bg-primary/20 blur-[1px]"></div>
+</div>
+<div class="absolute bottom-[40%] left-[15%] opacity-20">
+<div class="w-2 h-2 rounded-full bg-[#D946EF]/30 blur-[1px]"></div>
+</div>
+<div class="absolute top-[10%] left-[50%] opacity-10">
+<div class="w-6 h-6 border border-white/10 rounded-full"></div>
+</div>
+</div>
+<!-- Spacer for vertical centering -->
+<div class="flex-1"></div>
+<!-- Main Content -->
+<div class="relative z-10 flex flex-col items-center justify-center w-full px-6">
+<!-- Logo Container with Glow -->
+<div class="relative mb-8 group">
+<!-- Back Glow -->
+<div class="absolute -inset-4 bg-gradient-to-tr from-primary/40 to-[#D946EF]/40 rounded-full blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+<!-- Icon/Logo -->
+<div class="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
+<svg class="drop-shadow-2xl" fill="none" height="100%" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="logoGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#D946EF;stop-opacity:1"></stop>
+</lineargradient>
+<filter height="140%" id="glow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="5"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<!-- Abstract N Shape -->
+<path d="M28 20 L28 80 L38 80 L38 40 L62 80 L72 80 L72 20 L62 20 L62 60 L38 20 Z" fill="url(#logoGradient)"></path>
+</svg>
+</div>
+</div>
+<!-- Headline Text -->
+<h1 class="text-white tracking-tight text-[36px] font-bold leading-tight text-center pb-2 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+            NexusChat
+        </h1>
+<!-- Meta Text -->
+<p class="text-[#a291ca] text-sm sm:text-base font-light tracking-[0.2em] uppercase leading-normal text-center opacity-80">
+            Communication Reimagined
+        </p>
+</div>
+<!-- Spacer for vertical centering -->
+<div class="flex-1"></div>
+<!-- Bottom Loader (PageIndicators) -->
+<div class="relative z-10 w-full flex flex-col items-center justify-end pb-12">
+<div class="flex flex-row items-center justify-center gap-3">
+<!-- Loading Dots with varying opacities to simulate pulsing state -->
+<div class="h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(137,91,245,0.8)]"></div>
+<div class="h-2.5 w-2.5 rounded-full bg-primary/60"></div>
+<div class="h-2.5 w-2.5 rounded-full bg-primary/30"></div>
+</div>
+<p class="text-xs text-white/20 mt-4 font-light tracking-wide">v2.0.4</p>
+</div>
+</body></html>
